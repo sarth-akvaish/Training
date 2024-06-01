@@ -1,5 +1,9 @@
-var user = {
-    name: 'Noname',
-    age: 23
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var myUser = {
+    _id: "1242",
+    name: "dsnksjf",
+    email: "kdfnsfn",
+    isACctive: false
 };
-console.log('My Name');
+myUser.email = "sarthak@gmail.com";
