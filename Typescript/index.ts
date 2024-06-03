@@ -140,24 +140,36 @@
 // new_obj.getReelTime()
 // console.log(new_obj.getReelTime())
 
-const score: Array<number> = []
-const names: Array<string> = []
+// const score: Array<number> = []
+// const names: Array<string> = []
 
-function identityOne(val: boolean | number): boolean | number {
-    return val
+// function identityOne(val: boolean | number): boolean | number {
+//     return val
+// }
+
+// function identityTwo(val: any): any {
+//     return val;
+// }
+
+
+// //Generic in Typescript
+// function identityThree<Type>(val: Type): Type {
+//     return val;
+// }
+
+// identityThree("sarhkax")
+
+
+function getProducts<T>(products: T[]): T {
+    return products[0]
 }
 
-function identityTwo(val: any): any {
-    return val;
-}
+const ans = getProducts(["one", "two", "three", "four"]);
+console.log(ans)
 
 
-//Generic in Typescript
-function identityThree<Type>(val: Type): Type {
-    return val;
-}
 
-identityThree("sarhkax")
+
 
 
 

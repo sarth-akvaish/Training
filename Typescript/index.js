@@ -112,16 +112,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // const new_obj = new B("test", "test", "test")
 // new_obj.getReelTime()
 // console.log(new_obj.getReelTime())
-var score = [];
-var names = [];
-function identityOne(val) {
-    return val;
+// const score: Array<number> = []
+// const names: Array<string> = []
+// function identityOne(val: boolean | number): boolean | number {
+//     return val
+// }
+// function identityTwo(val: any): any {
+//     return val;
+// }
+// //Generic in Typescript
+// function identityThree<Type>(val: Type): Type {
+//     return val;
+// }
+// identityThree("sarhkax")
+function getProducts(products) {
+    return products[0];
 }
-function identityTwo(val) {
-    return val;
-}
-//Generic in Typescript
-function identityThree(val) {
-    return val;
-}
-identityThree("sarhkax");
+var ans = getProducts(["one", "two", "three", "four"]);
+console.log(ans);
