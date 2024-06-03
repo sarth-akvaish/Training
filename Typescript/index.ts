@@ -64,47 +64,81 @@
 
 //Getter and Setter in Typescript
 
-class User {
-    protected _courseCount = 1
-    readonly city: string = "Lucknow"
+// class User {
+//     protected _courseCount = 1
+//     readonly city: string = "Lucknow"
+//     constructor(
+//         public email: string,
+//         public name: string
+//     ) {
+//     }
+
+//     private deleteToken() {
+//         console.log("Token")
+//     }
+
+//     get getAppleEmail(): string {
+//         return `apple${this.email}`
+//     }
+
+//     get courseCount(): number {
+//         return this._courseCount
+//     }
+
+//     set courseCount(courseNum) {
+//         if (courseNum <= 1) {
+//             throw new Error("Course count should be greater than 1")
+//         }
+
+//         this._courseCount = courseNum;
+//     }
+// }
+
+
+// class SubUser extends User {
+//     isFamily: boolean = true
+//     changeCourseCount() {
+//         this._courseCount = 4
+//     }
+// }
+
+// const b = new User("test@hemail.com", "test")
+// console.log(b.courseCount)
+// b.courseCount = 5
+// console.log(b.courseCount)
+
+abstract class takePhoto {
     constructor(
-        public email: string,
-        public name: string
+        public cameraMode: string,
+        public filter: string
     ) {
     }
 
-    private deleteToken() {
-        console.log("Token")
-    }
+    abstract getSepia(): void
 
-    get getAppleEmail(): string {
-        return `apple${this.email}`
-    }
-
-    get courseCount(): number {
-        return this._courseCount
-    }
-
-    set courseCount(courseNum) {
-        if (courseNum <= 1) {
-            throw new Error("Course count should be greater than 1")
-        }
-
-        this._courseCount = courseNum;
+    getReelTime(): number {
+        return 8
     }
 }
 
 
-class SubUser extends User {
-    isFamily: boolean = true
-    changeCourseCount() {
-        this._courseCount = 4
+class B extends takePhoto {
+    constructor(
+        public cameraMode: string,
+        public filter: string,
+        public burst: string
+    ) {
+        super(cameraMode, filter)
+    }
+
+    getSepia(): void {
+        console.log('Sepia')
     }
 }
 
-const b = new User("test@hemail.com", "test")
-console.log(b.courseCount)
-b.courseCount = 5
-console.log(b.courseCount)
+const new_obj = new B("test", "test", "test")
+new_obj.getReelTime()
+console.log(new_obj.getReelTime())
+
 
 export { }

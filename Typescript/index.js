@@ -67,51 +67,64 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // const a = new User("test@gmail.com", "test")
 // a.name
 //Getter and Setter in Typescript
-var User = /** @class */ (function () {
-    function User(email, name) {
-        this.email = email;
-        this.name = name;
-        this._courseCount = 1;
-        this.city = "Lucknow";
+// class User {
+//     protected _courseCount = 1
+//     readonly city: string = "Lucknow"
+//     constructor(
+//         public email: string,
+//         public name: string
+//     ) {
+//     }
+//     private deleteToken() {
+//         console.log("Token")
+//     }
+//     get getAppleEmail(): string {
+//         return `apple${this.email}`
+//     }
+//     get courseCount(): number {
+//         return this._courseCount
+//     }
+//     set courseCount(courseNum) {
+//         if (courseNum <= 1) {
+//             throw new Error("Course count should be greater than 1")
+//         }
+//         this._courseCount = courseNum;
+//     }
+// }
+// class SubUser extends User {
+//     isFamily: boolean = true
+//     changeCourseCount() {
+//         this._courseCount = 4
+//     }
+// }
+// const b = new User("test@hemail.com", "test")
+// console.log(b.courseCount)
+// b.courseCount = 5
+// console.log(b.courseCount)
+var takePhoto = /** @class */ (function () {
+    function takePhoto(cameraMode, filter) {
+        this.cameraMode = cameraMode;
+        this.filter = filter;
     }
-    User.prototype.deleteToken = function () {
-        console.log("Token");
+    takePhoto.prototype.getReelTime = function () {
+        return 8;
     };
-    Object.defineProperty(User.prototype, "getAppleEmail", {
-        get: function () {
-            return "apple".concat(this.email);
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(User.prototype, "courseCount", {
-        get: function () {
-            return this._courseCount;
-        },
-        set: function (courseNum) {
-            if (courseNum <= 1) {
-                throw new Error("Course count should be greater than 1");
-            }
-            this._courseCount = courseNum;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    return User;
+    return takePhoto;
 }());
-var SubUser = /** @class */ (function (_super) {
-    __extends(SubUser, _super);
-    function SubUser() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.isFamily = true;
+var B = /** @class */ (function (_super) {
+    __extends(B, _super);
+    function B(cameraMode, filter, burst) {
+        var _this = _super.call(this, cameraMode, filter) || this;
+        _this.cameraMode = cameraMode;
+        _this.filter = filter;
+        _this.burst = burst;
         return _this;
     }
-    SubUser.prototype.changeCourseCount = function () {
-        this._courseCount = 4;
+    B.prototype.getSepia = function () {
+        console.log('Sepia');
     };
-    return SubUser;
-}(User));
-var b = new User("test@hemail.com", "test");
-console.log(b.courseCount);
-b.courseCount = 5;
-console.log(b.courseCount);
+    return B;
+}(takePhoto));
+var new_obj = new B("test", "test", "test");
+new_obj.getReelTime();
+console.log(new_obj.getReelTime());
