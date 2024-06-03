@@ -26,8 +26,11 @@ interface User {
     getCoupon(couponName: string, value: number): number
 }
 
+interface User {
+    googleToken: string
+}
 const Hari: User = {
-    db_id: 12, email: "hari@gmail.com", userId: 12313,
+    db_id: 12, email: "hari@gmail.com", userId: 12313, googleToken: 'dfnsjdf',
     startTrail: () => {
         return 'checking'
     },
