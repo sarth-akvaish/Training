@@ -29,7 +29,12 @@ interface User {
 interface User {
     googleToken: string
 }
-const Hari: User = {
+
+interface Admin extends User {
+    role: "admin" | "ta" | "user",
+}
+const Hari: Admin = {
+    role: "admin",
     db_id: 12, email: "hari@gmail.com", userId: 12313, googleToken: 'dfnsjdf',
     startTrail: () => {
         return 'checking'
