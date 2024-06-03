@@ -6,21 +6,6 @@
 //     isACctive: boolean;
 //     creaditCardDetails?: number
 // }
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 Object.defineProperty(exports, "__esModule", { value: true });
 // let myUser: User = {
 //     _id: "1242",
@@ -101,30 +86,42 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // console.log(b.courseCount)
 // b.courseCount = 5
 // console.log(b.courseCount)
-var takePhoto = /** @class */ (function () {
-    function takePhoto(cameraMode, filter) {
-        this.cameraMode = cameraMode;
-        this.filter = filter;
-    }
-    takePhoto.prototype.getReelTime = function () {
-        return 8;
-    };
-    return takePhoto;
-}());
-var B = /** @class */ (function (_super) {
-    __extends(B, _super);
-    function B(cameraMode, filter, burst) {
-        var _this = _super.call(this, cameraMode, filter) || this;
-        _this.cameraMode = cameraMode;
-        _this.filter = filter;
-        _this.burst = burst;
-        return _this;
-    }
-    B.prototype.getSepia = function () {
-        console.log('Sepia');
-    };
-    return B;
-}(takePhoto));
-var new_obj = new B("test", "test", "test");
-new_obj.getReelTime();
-console.log(new_obj.getReelTime());
+// abstract class takePhoto {
+//     constructor(
+//         public cameraMode: string,
+//         public filter: string
+//     ) {
+//     }
+//     abstract getSepia(): void
+//     getReelTime(): number {
+//         return 8
+//     }
+// }
+// class B extends takePhoto {
+//     constructor(
+//         public cameraMode: string,
+//         public filter: string,
+//         public burst: string
+//     ) {
+//         super(cameraMode, filter)
+//     }
+//     getSepia(): void {
+//         console.log('Sepia')
+//     }
+// }
+// const new_obj = new B("test", "test", "test")
+// new_obj.getReelTime()
+// console.log(new_obj.getReelTime())
+var score = [];
+var names = [];
+function identityOne(val) {
+    return val;
+}
+function identityTwo(val) {
+    return val;
+}
+//Generic in Typescript
+function identityThree(val) {
+    return val;
+}
+identityThree("sarhkax");

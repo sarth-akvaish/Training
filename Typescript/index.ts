@@ -107,38 +107,59 @@
 // b.courseCount = 5
 // console.log(b.courseCount)
 
-abstract class takePhoto {
-    constructor(
-        public cameraMode: string,
-        public filter: string
-    ) {
-    }
+// abstract class takePhoto {
+//     constructor(
+//         public cameraMode: string,
+//         public filter: string
+//     ) {
+//     }
 
-    abstract getSepia(): void
+//     abstract getSepia(): void
 
-    getReelTime(): number {
-        return 8
-    }
+//     getReelTime(): number {
+//         return 8
+//     }
+// }
+
+
+// class B extends takePhoto {
+//     constructor(
+//         public cameraMode: string,
+//         public filter: string,
+//         public burst: string
+//     ) {
+//         super(cameraMode, filter)
+//     }
+
+//     getSepia(): void {
+//         console.log('Sepia')
+//     }
+// }
+
+// const new_obj = new B("test", "test", "test")
+// new_obj.getReelTime()
+// console.log(new_obj.getReelTime())
+
+const score: Array<number> = []
+const names: Array<string> = []
+
+function identityOne(val: boolean | number): boolean | number {
+    return val
+}
+
+function identityTwo(val: any): any {
+    return val;
 }
 
 
-class B extends takePhoto {
-    constructor(
-        public cameraMode: string,
-        public filter: string,
-        public burst: string
-    ) {
-        super(cameraMode, filter)
-    }
-
-    getSepia(): void {
-        console.log('Sepia')
-    }
+//Generic in Typescript
+function identityThree<Type>(val: Type): Type {
+    return val;
 }
 
-const new_obj = new B("test", "test", "test")
-new_obj.getReelTime()
-console.log(new_obj.getReelTime())
+identityThree("sarhkax")
+
+
 
 
 export { }
