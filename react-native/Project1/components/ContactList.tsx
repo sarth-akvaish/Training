@@ -27,7 +27,7 @@ export default function ContactList() {
     {
       uid: 4,
       name: 'Test1',
-      company: 'Google',
+      location: 'Google',
       image:
         'https://imgs.search.brave.com/PVUfYH0LXpx98boFnkR0syDr25RdoSWaF0paHQfs2ms/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9o/YXBweS1yZWQtaGFp/cmVkLW1hbi10YWtp/bmctc2VsZmllLXBo/b3RvXzEyNjItNTEx/OC5qcGc_c2l6ZT02/MjYmZXh0PWpwZw',
     },
@@ -45,8 +45,10 @@ export default function ContactList() {
               }}
               style={styles.userImage}
             />
-            <Text style={styles.userName}>{contact.name}</Text>
-            <Text style={styles.userName}>{contact.company}</Text>
+            <View>
+              <Text style={styles.userName}>{contact.name}</Text>
+              <Text style={styles.userName}>{contact.location}</Text>
+            </View>
           </View>
         ))}
       </ScrollView>
@@ -55,13 +57,34 @@ export default function ContactList() {
 }
 
 const styles = StyleSheet.create({
-  headingText: {},
-  container: {},
-  userCard: {},
+  headingText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    paddingHorizontal: 8,
+    marginBottom: 10,
+    color: '#000',
+  },
+  container: {
+    paddingHorizontal: 10,
+  },
+  userCard: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 4,
+    backgroundColor: '#8d3daf',
+    borderRadius: 8,
+    padding: 4,
+  },
   userImage: {
     width: 60,
     height: 60,
     borderRadius: 30,
+    marginBottom: 4,
+    marginRight: 8,
   },
-  userName: {},
+  userName: {
+    fontSize: 16,
+    color: '#fff',
+  },
 });
