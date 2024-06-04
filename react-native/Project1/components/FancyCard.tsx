@@ -17,7 +17,7 @@ export default function FancyCard() {
           <Text style={styles.cardlabel}>Fast and Furious 100</Text>
           <Text style={styles.cardDesc}>
             Fast and Furious 100 Fast and Furious 100 Fast and Furious 100 Fast
-            and Furious 100{' '}
+            and Furious 100
           </Text>
           <Text style={styles.cardFooter}>12 mins away</Text>
         </View>
@@ -27,15 +27,45 @@ export default function FancyCard() {
 }
 
 const styles = StyleSheet.create({
-  headingText: {},
-  cardElevated: {},
-  card: {},
+  headingText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    paddingHorizontal: 8,
+  },
+  cardElevated: {
+    backgroundColor: '#FFDFF9',
+  },
+  card: {
+    width: 360,
+    height: 360,
+    borderRadius: 8,
+    marginVertical: 12,
+    marginHorizontal: 16,
+  },
   cardImage: {
     height: 200,
+    borderRadius: 4,
+    marginBottom: 8,
   },
-  cardBody: {},
-  title: {},
-  cardlabel: {},
-  cardDesc: {},
-  cardFooter: {},
+  cardBody: {
+    flex: 1,
+    flexGrow: 1,
+    padding: 8,
+  },
+  title: {
+    fontSize: 20,
+  },
+  cardlabel: {
+    color: '#000000',
+    fontSize: 14,
+    marginVertical: 4,
+  },
+  cardDesc: {
+    color: '#000000',
+    fontSize: 13,
+  },
+  cardFooter: {
+    color: '#000000',
+    fontSize: 16,
+  },
 });
