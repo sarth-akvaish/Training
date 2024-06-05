@@ -13,6 +13,12 @@ import Dice3 from '../assets/Three.png';
 import Dice4 from '../assets/Four.png';
 import Dice5 from '../assets/Five.png';
 import Dice6 from '../assets/Six.png';
+import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
+
+const options = {
+  enableVibrateFallback: true,
+  ignoreAndroidSystemSettings: false,
+};
 
 type diceProps = PropsWithChildren<{imageUrl: ImageSourcePropType}>;
 
@@ -52,6 +58,8 @@ export default function App(): JSX.Element {
       default:
         break;
     }
+
+    ReactNativeHapticFeedback.trigger('impactLight', options);
   };
 
   return (
