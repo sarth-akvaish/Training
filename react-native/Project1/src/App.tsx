@@ -1,43 +1,51 @@
+import React from 'react';
+import type {PropsWithChildren} from 'react';
 import {
-  ActivityIndicator,
   SafeAreaView,
+  ScrollView,
+  StatusBar,
   StyleSheet,
   Text,
+  useColorScheme,
   View,
 } from 'react-native';
-import React, {useEffect, useState} from 'react';
-import {addTrack, setUpPlayer} from '../musicService';
 
-export default function App(): JSX.Element {
-  const [isPlayerReady, setIsPlayerReady] = useState(false);
+//Navigation
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-  async function setup() {
-    let issetup = await setUpPlayer();
+//screens
+import Home from './screens/Home';
+import Details from './screens/Details';
 
-    if (issetup) {
-      await addTrack();
-    }
+export type RootStackParamList = {
+  Home: undefined;
+  Details: {productId: string};
+};
 
-    setIsPlayerReady(issetup);
-  }
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
-  useEffect(() => {
-    setup();
-  }, []);
-
-  if (!isPlayerReady) {
-    return (
-      <SafeAreaView>
-        <ActivityIndicator />
-      </SafeAreaView>
-    );
-  }
-
+function App(): JSX.Element {
   return (
-    <SafeAreaView>
-      <Text>Seem's ok</Text>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            title: 'Trending Products',
+          }}
+        />
+        <Stack.Screen
+          name="Details"
+          component={Details}
+          options={{
+            title: 'Product Details',
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({});
+export default App;
